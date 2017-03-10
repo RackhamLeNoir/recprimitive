@@ -1,0 +1,18 @@
+#addition de n et de p
+Terme ADD = Rec(n,p,(x,y)S(y))
+#multiplication de n et de p
+Terme MULT = Rec(n,0,(x,y)ADD[n<p,p<y])
+#multiplication non efficace de n et de p
+Terme MULT2 = Rec(n,0,(x,y)ADD[n<y])
+#carré de n
+Terme CARRE = Rec(n,0,(x,y)ADD[p<y])
+#n puissance p
+Terme EXP = Rec(p,1,(x,y)MULT[p<y])
+#tour d'exponentielle n p
+Terme TOUR = Rec(p,n,(x,y)EXP[n<2,p<y])
+#prédécesseur de n
+Terme PRED = Rec(n,0,(x,y)x)
+#soustraction de n par p
+Terme SOUS = Rec(p,n,(x,y)PRED[n<y])
+#factorielle de n
+Terme FACT = Rec(n,1,(x,y)MULT[n<S(x),p<y])

@@ -1,0 +1,8 @@
+#construction d'un couple d'entiers
+comb couple = s(add;p2,s(div2;s(mult;add,s(succ;add))))
+#somme des éléments d'un couple
+comb a = s(div2;s(pred;s(racine;s(succ;s(mult;8,id)))))
+#partie 1 d'un couple
+comb pi1 = s(moins;s(div2;s(mult;a,s(succ;s(succ;s(succ;a))))),id)
+#partie 2 d'un couple
+comb pi2 = s(moins;id,s(div2;s(mult;a,s(succ;a))))

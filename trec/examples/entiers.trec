@@ -1,0 +1,22 @@
+#n>p
+Terme SUPSTRICT = SOUS
+#n<p
+Terme INFSTRICT = SOUS[n<p,p<n]
+#n<=p
+Terme IEQ = NON[b<SUPSTRICT]
+#n>=p
+Terme SEQ = NON[b<INFSTRICT]
+#n != p
+Terme DIFF = OU[a<INFSTRICT,b<SUPSTRICT]
+#n = p
+Terme EGAL = NON[b<DIFF]
+#n est pair
+Terme PAIR = Rec(n,1,(x,y)NON[b<y])
+#n/2
+Terme DIV2 = Rec(n,0,(x,y)IFTHENELSE[b<PAIR[n<S(x)],u<S(y),v<y])
+#n mod p
+Terme MOD = Rec(n,0,(x,y)IFTHENELSE[b<EGAL[n<S(y)],u<0,v<S(y)])
+#n/p
+Terme DIV = Rec(n,0,(x,y)IFTHENELSE[b<EGAL[n<S(MOD[n<x])],u<S(y),v<y])
+#racine carrée de n
+Terme RACINE = Rec(S(n),0,(x,y)IFTHENELSE[b<ET[a<IEQ[n<CARRE[n<x],p<n],b<IEQ[p<CARRE[n<S(x)]]],u<x,v<y])

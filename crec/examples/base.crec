@@ -1,0 +1,24 @@
+#identité
+comb id = pi(1,1)
+#partie 1 d'un 2-uplet
+comb p1 = pi(1,2)
+#partie 2 d'un 2-uplet
+comb p2 = pi(2,2)
+#addition de deux entiers
+comb add = rec(id,s(succ;pi(2,3)))
+#multiplication de deux entiers
+comb mult = rec(0,s(add;pi(3,3),pi(2,3)))
+#puissance nieme de p
+comb expenvers = rec(1,s(mult;pi(3,3),pi(2,3)))
+#puissance pieme de n
+comb exp = s(expenvers;p2,p1)
+#prédécesseur d'un entier
+comb pred = rec(z,p1)
+#soustraction à l'envers de deux entiers
+comb moinsenvers = rec(id,S(pred;pi(2,3)))
+#soustraction de deux entiers
+comb moins = s(moinsenvers;p2,p1)
+#factorielle
+comb factorielle = rec(1,s(mult;s(succ;p1),p2))
+#tour d'exponentielle
+comb tour = rec(id,s(expenvers;pi(2,3),2))

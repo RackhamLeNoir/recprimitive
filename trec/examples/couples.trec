@@ -1,0 +1,8 @@
+#entier correcpondant au couple (n,p)
+Terme COUPLE = ADD[n<b,p<DIV2[n<MULT[n<ADD[n<a,p<b],p<S(ADD[n<a,p<b])]]]
+#n+p avec (n,p) = couple(c)
+Terme A = DIV2[n<PRED[n<RACINE[n<S(MULT[n<8,p<c])]]]
+#n avec (n,p) = couple(c)
+Terme PI1 = SOUS[n<DIV2[n<MULT[n<A,p<S(S(S(A)))]],p<c]
+#p avec (n,p) = couple(c)
+Terme PI2 = SOUS[n<c,p<DIV2[n<MULT[n<A,p<S(A)]]]

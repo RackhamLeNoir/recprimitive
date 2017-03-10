@@ -1,0 +1,10 @@
+#if b then u else v
+Terme IFTHENELSE = Rec(b,v,(x,y)u)
+#non b
+Terme NON = Rec(b,S(Z),(x,y)Z)
+#conversion d'un entier en booléen
+Terme BOOL = Rec(b,Z,(x,y)S(Z))
+#a ou b
+Terme OU = Rec(a,BOOL,(x,y)S(Z))
+#a et b
+Terme ET = Rec(b,Z,(x,y)BOOL[b<a])

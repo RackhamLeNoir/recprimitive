@@ -1,0 +1,2 @@
+#retourne le nieme nombre de Fibonacci
+comb fibo = s(pi1;rec(4,s(couple;s(pi2;p2),s(a;p2))))

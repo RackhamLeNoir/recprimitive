@@ -1,0 +1,5 @@
+comb ifthenelse = Rec(pi(2,2),pi(3,4))
+comb non = rec(s(1;Z),0)
+comb bool = rec(S(0;Z),1)
+comb ou = s(ifthenelse;p1,1,s(bool;p2))
+comb et = s(ifthenelse;p1,s(bool;p2),0)

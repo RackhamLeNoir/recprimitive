@@ -1,0 +1,22 @@
+#supérieur strict
+comb supstrict = moins
+#inférieur strict
+comb infstrict = moinsenvers
+#supérieur ou egal
+comb seq = s(non;infstrict)
+#inférieur ou egal
+comb ieq = s(non;supstrict)
+#retourne vrai si les deux entiers sont différents
+comb diff = s(ou;infstrict,supstrict)
+#retourne vrai si les deux entiers sont egaux
+comb egal = s(non;diff)
+#retourne vrai si l'entier est pair
+comb pair = rec(1,S(non;p2))
+#divise l'entier par deux
+comb div2 = rec(0,s(ifthenelse;s(pair;p1),p2,s(succ;p2)))
+#effectue le modulo du premier par le second
+comb mod = rec(0,s(ifthenelse;s(egal;s(succ;pi(2,3)),pi(3,3)),0,s(succ;pi(2,3))))
+#effectue la division entière du premier entier par le second
+comb div = rec(0,s(ifthenelse;s(egal;s(succ;s(mod;pi(1,3),pi(3,3))),pi(3,3)),s(succ;pi(2,3)),pi(2,3)))
+#retourne la racine carrée entière de l'entier
+comb racine = s(rec(0,s(ifthenelse;s(et;s(seq;Pi(3,3),s(expenvers;2,pi(1,3))),s(seq;s(expenvers;2,s(succ;pi(1,3))),pi(3,3))),pi(1,3),pi(2,3)));id,id)
